@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Form Feedback Pelanggan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(2, 245, 6); /* Background warna hijau */
+        }
+        form {
+            max-width: 500px;
+            width: 100%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white; /* Warna latar belakang box putih */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk box */
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        button.cancel {
+            background-color: #f44336;
+            margin-left: 10px; /* Menambahkan sedikit jarak antara tombol */
+        }
+        button.cancel:hover {
+            background-color: #d32f2f;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="/submit_feedback" method="post">
+        <h2>Form Feedback Pelanggan</h2>
+
+        <!-- Dropdown untuk Topik Feedback -->
+        <label for="topik">Pilih Topik Feedback:</label>
+        <select id="topik" name="topik" required>
+            <option value="Pelayanan">Pelayanan</option>
+            <option value="Produk">Produk</option>
+            <option value="Pengiriman">Pengiriman</option>
+            <option value="Lagu">Lagu</option>
+            <option value="Lainnya">Lainnya</option>
+        </select>
+
+        <!-- Textarea untuk Detail Feedback -->
+        <label for="feedback">Masukkan Detail Feedback Anda:</label>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            <label for="floatingTextarea">Feedback</label>
+          </div>
+
+        <!-- Tombol Submit dan Cancel dalam grup -->
+        <div class="btn-group">
+            <button type="submit">Kirim Feedback</button>
+            <button type="button" class="cancel">Cancel</button>
+        </div>
+    </form>
+
+</body>
+</html>
